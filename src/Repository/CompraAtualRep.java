@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.CompraAtual;
 import Util.ConexaoBD;
+import static Util.ConexaoBD.conectarBanco;
 import model.Cliente;
 
  
@@ -70,6 +71,50 @@ public class CompraAtualRep {
             System.out.println("Ocorreu um erro ao tentar salvar: " + ex.getMessage());
         }
 
+    }
+    
+    public List<CompraAtual> listar() {
+        List<CompraAtual> compraAtuais = new ArrayList<>();
+        ResultSet res;
+        Connection connection = null;
+        PreparedStatement pstm = null;
+        try {
+            connection = conectarBanco();
+            pstm = connection.prepareStatement(SELECT);
+            res = pstm.executeQuery();
+
+            while (res.next()) {
+                CompraAtual e = new CompraAtual();
+                e.setIdCompra(res.getInt("IdCompra"));
+                e.setTotalItens(res.getInt("TotalItens"));
+                e.setPrecoTotalCompra(res.getDouble("precoTotalCompra"));
+                e.setCentralDSC(res.getDouble("centralDSC"));
+                e.setCentralJFL(res.getDouble("centralJFL"));
+                e.setTecladoDSC(res.getDouble("tecladoDSC"));
+                e.setTecladoParadox(res.getDouble("tecladoParadox"));
+                e.setBateriaIntel(res.getDouble("bateriaIntel"));
+                e.setBateriaMoura(res.getDouble("bateriaMoura"));
+                e.setSireneGLK(res.getDouble("sireneGLK"));
+                e.setSirenaECP(res.getDouble("sireneECP"));
+                e.setSensorPassivo(res.getDouble("sensorPassivo"));
+                e.setContadorCentralDSC(res.getInt("contadorCentralDSC"));
+                e.setContadorCentralJFL(res.getInt("contadorCentralJFL"));
+                e.setContadorTecladoDSC(res.getInt("contadortecladoDSC"));
+                e.setContadorTecladoParadox(res.getInt("contadortecladoParadox"));
+                e.setContadorBateriaIntel(res.getInt("contadorBateriaIntel"));
+                e.setContadorBateriaMoura(res.getInt("contadorBateriaMoura"));
+                e.setContadorSensorParadox(res.getInt("contadorSensorParadox"));
+                e.setContadorSensorIntel(res.getInt("contadorSensorPassivo"));
+                e.setContadorSireneGlk(res.getInt("contadorSireneGLK"));
+                e.setContadorSireneEcp(res.getInt("contadorSireneECP"));
+                
+                compraAtuais.add(e);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Ocorreu um erro ao tentar buscar os estudantes do banco: " + ex.getMessage());
+        }
+        return compraAtuais; 
     }
     
 }

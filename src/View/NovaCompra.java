@@ -614,6 +614,9 @@ public class NovaCompra extends javax.swing.JFrame {
         c.setContadorSensorJFL(c.getContadorSensorJFL());
         c.setContadorSireneGlk(c.getContadorSireneGlk());
         c.setContadorSireneEcp(c.getContadorSireneEcp());
+        
+        JOptionPane.showMessageDialog(rootPane, "id do cliente: " + clienteLogado.getIdcadastroCliente());
+        
         c.setIdClienteCompra(clienteLogado.getIdcadastroCliente()); 
         
         CompraAtualRep r = new CompraAtualRep();

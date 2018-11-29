@@ -15,7 +15,7 @@ public class ClienteRep extends ConexaoBD{
 
     private static final String SELECT = "select idcadastroCliente, nome, sobrenome, email, telefone1, telefone2, senha, nascionalidade from cadastrocliente order by idcadastroCliente";
 
-    private static final String LOGIN = "select nome from cadastrocliente where email = ? and senha = ?";
+    private static final String LOGIN = "select * from cadastrocliente where email = ? and senha = ?";
     
     private static final String DELETE = "delete from cadastrocliente where idcadastroCliente = ?";
 
@@ -89,6 +89,7 @@ public class ClienteRep extends ConexaoBD{
 
             while (res.next()) {
                 clienteLogado = new Cliente();
+                clienteLogado.setIdcadastroCliente(res.getInt("idcadastroCliente")); 
                 clienteLogado.setNome(res.getString("nome")); 
             }
             

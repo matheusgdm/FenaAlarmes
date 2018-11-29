@@ -52,7 +52,7 @@ public class CompraAtualRep {
             pstm.setInt(20, compraAtual.getContadorSensorIntel());
             pstm.setInt(21, compraAtual.getContadorSireneGlk());
             pstm.setInt(22, compraAtual.getContadorSireneEcp());
-            pstm.setInt(23, clienteLogado.getIdcadastroCliente()); 
+            pstm.setInt(23, compraAtual.getIdClienteCompra()); 
             
             pstm.execute();
             pstm.close();

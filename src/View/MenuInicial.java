@@ -15,11 +15,8 @@ public class MenuInicial extends javax.swing.JFrame {
 
     Cliente clienteLogado;
     
-    /**
-     * Creates new form MenuInicial
-     */
-    public MenuInicial() {
-        initComponents();
+   public MenuInicial() {
+        initComponents(); 
     }
 
     public MenuInicial(Cliente clienteLogado) {
@@ -130,8 +127,7 @@ public class MenuInicial extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(158, 158, 158)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(163, 163, 163))))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(382, 382, 382)
                         .addComponent(txtClienteLogado))

@@ -6,11 +6,13 @@
 package View;
 
 import Repository.ClienteRep;
+import Repository.CompraAtualRep;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Cliente;
+import model.CompraAtual;
 
 /**
  *
@@ -19,6 +21,7 @@ import model.Cliente;
 public class CadastroNovoCliente extends javax.swing.JFrame {
 
     Cliente c = new Cliente();
+    CompraAtual ca = new CompraAtual();
 
     public CadastroNovoCliente() {
         initComponents();
@@ -64,7 +67,6 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fena Alarmes - Cadastro");
         setBounds(new java.awt.Rectangle(540, 230, 800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         jLabel1.setText("Nome:");
@@ -148,7 +150,7 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setText("(Campo não obrigatório!)");
+        jLabel9.setText("(Campo não obrigatório)");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,12 +196,13 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
                         .addComponent(jLabel9))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(226, 226, 226)
-                        .addComponent(btnSalvarCadastro)
-                        .addGap(248, 248, 248))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(303, 303, 303)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnSalvarCadastro)
+                                .addGap(248, 248, 248))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(303, 303, 303)))))
                 .addGap(84, 84, 84))
         );
         layout.setVerticalGroup(
@@ -281,19 +284,23 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(rootPane, "Impossível realizar o cadastro, campos obrigatórios não estão preenchidos!");
         }else{
+           //salvando cadastro do cliente
             c.setNome(painelNomeTelaCadastro.getText());
             c.setSobrenome(painelSobrenomeTelaCadastro.getText());
             c.setEmail(painelEmailTelaCadastro.getText());
             c.setTelefone1(Integer.parseInt(painelTelefone01TelaCadastro.getText()));
             c.setTelefone2(Integer.parseInt(painelTelefone02TelaCadastro.getText()));
             c.setSenha(painelSenhaTelaCadastro.getText());
-
             String nasc = painelNascionalidadeTelaCadastro.getText() != null || !painelNascionalidadeTelaCadastro.getText().isEmpty()  ? painelNascionalidadeTelaCadastro.getText(): "Brasil";
             c.setNascionalidade(nasc);
-
             ClienteRep eRep = new ClienteRep();
+            
+            //passando valores iniciais para minhas compras;
+            CompraAtualRep r = new CompraAtualRep();
+            
             try {
                 eRep.salvar(c);
+                r.salvar(ca);
             } catch (SQLException ex) {
                 Logger.getLogger(CadastroNovoCliente.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(rootPane, "Não foi possivel salvar novo cadastro!");

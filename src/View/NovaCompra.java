@@ -9,6 +9,8 @@ public class NovaCompra extends javax.swing.JFrame {
 
     CompraAtual c = new CompraAtual();
     Cliente clienteLogado;
+    
+    
 
     public NovaCompra() {
         initComponents();
@@ -25,7 +27,7 @@ public class NovaCompra extends javax.swing.JFrame {
         txtSireneECP.setText(String.valueOf("Quantidade: " + c.getContadorSireneEcp()));
         txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
     }
-
+    
     public NovaCompra(Cliente clienteLogado) {
         this.clienteLogado = clienteLogado;
         initComponents();
@@ -556,7 +558,7 @@ public class NovaCompra extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(rootPane, "Compra Finalizada, verificar pedido no menu de 'Minhas Compras!'");
         this.setVisible(false);
-        new MenuInicial().setVisible(true);
+        new MenuInicial(clienteLogado).setVisible(true);
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void btnRetiraCentralDSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiraCentralDSCActionPerformed
@@ -789,7 +791,7 @@ public class NovaCompra extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
-        new MenuInicial().setVisible(true);
+        new MenuInicial(clienteLogado).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

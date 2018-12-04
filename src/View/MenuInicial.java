@@ -20,8 +20,8 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     public MenuInicial(Cliente clienteLogado) {
-        this.clienteLogado = clienteLogado;
         initComponents();
+        this.clienteLogado = clienteLogado;
         txtClienteLogado.setText(clienteLogado.getNome());
     }
 
@@ -156,18 +156,18 @@ public class MenuInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovaCompraMenuInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaCompraMenuInicialActionPerformed
-        this.setVisible(false);
         new NovaCompra(clienteLogado).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnNovaCompraMenuInicialActionPerformed
 
     private void btnMinhasComprasMenuInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinhasComprasMenuInicialActionPerformed
+        new MinhasCompras(clienteLogado).setVisible(true);
         this.setVisible(false);
-        new MinhasCompras().setVisible(true);
     }//GEN-LAST:event_btnMinhasComprasMenuInicialActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
         new TelaInicial().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

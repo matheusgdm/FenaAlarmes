@@ -6,7 +6,6 @@
 package View;
 
 import Repository.ClienteRep;
-import Repository.CompraAtualRep;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -295,12 +294,9 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
             c.setNascionalidade(nasc);
             ClienteRep eRep = new ClienteRep();
             
-            //passando valores iniciais para minhas compras;
-            CompraAtualRep r = new CompraAtualRep();
             
             try {
                 eRep.salvar(c);
-                r.salvar(ca);
             } catch (SQLException ex) {
                 Logger.getLogger(CadastroNovoCliente.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(rootPane, "Não foi possivel salvar novo cadastro!");

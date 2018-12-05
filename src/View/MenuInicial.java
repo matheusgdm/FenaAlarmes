@@ -112,6 +112,7 @@ public class MenuInicial extends javax.swing.JFrame {
             }
         });
 
+        txtClienteLogado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtClienteLogado.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,11 +130,11 @@ public class MenuInicial extends javax.swing.JFrame {
                                 .addGap(158, 158, 158)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(382, 382, 382)
-                        .addComponent(txtClienteLogado))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(299, 299, 299)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(373, 373, 373)
+                        .addComponent(txtClienteLogado)))
                 .addContainerGap(189, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,8 +143,8 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtClienteLogado)
-                .addGap(18, 18, 18)
+                .addComponent(txtClienteLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

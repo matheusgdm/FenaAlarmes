@@ -9,8 +9,6 @@ public class NovaCompra extends javax.swing.JFrame {
 
     CompraAtual c = new CompraAtual();
     Cliente clienteLogado;
-    
-    
 
     public NovaCompra() {
         initComponents();
@@ -27,11 +25,23 @@ public class NovaCompra extends javax.swing.JFrame {
         txtSireneECP.setText(String.valueOf("Quantidade: " + c.getContadorSireneEcp()));
         txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
     }
-    
+
     public NovaCompra(Cliente clienteLogado) {
         this.clienteLogado = clienteLogado;
         initComponents();
         txtClienteLogado.setText("Cliente logado: ".concat(this.clienteLogado.getNome()));
+
+        txtTotalDSC.setText(String.valueOf("Quantidade: " + c.getContadorCentralDSC()));
+        txtJFL.setText(String.valueOf("Quantidade: " + c.getContadorCentralJFL()));
+        txtTeclaDSC.setText(String.valueOf("Quantidade: " + c.getContadorTecladoDSC()));
+        txtTeclaParadox.setText(String.valueOf("Quantidade: " + c.getContadorTecladoParadox()));
+        txtBateIntel.setText(String.valueOf("Quantidade: " + c.getContadorBateriaIntel()));
+        txtBateriaMoura.setText(String.valueOf("Quantidade: " + c.getContadorBateriaMoura()));
+        txtSensorParadox.setText(String.valueOf("Quantidade: " + c.getContadorSensorParadox()));
+        txtSensorPassivo.setText(String.valueOf("Quantidade: " + c.getContadorSensorIntel()));
+        txtSireneGLK.setText(String.valueOf("Quantidade: " + c.getContadorSireneGlk()));
+        txtSireneECP.setText(String.valueOf("Quantidade: " + c.getContadorSireneEcp()));
+        txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
     }
 
     @SuppressWarnings("unchecked")
@@ -86,7 +96,6 @@ public class NovaCompra extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(540, 230, 0, 0));
-        setPreferredSize(new java.awt.Dimension(800, 740));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -99,19 +108,19 @@ public class NovaCompra extends javax.swing.JFrame {
         jLabel3.setText("Teclado DSC PK5500 LCD - R$ 119,00 ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setText("Teclado Paradox K32 LCD");
+        jLabel4.setText("Teclado Paradox K32 LCD - R$ 635.00");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel5.setText("Bateria Selada Intelbras 12v 7a");
+        jLabel5.setText("Bateria Selada Intelbras 12v 7a - R$ 62.00");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setText("Bateria Selada Gel Moura 7ah 12v");
+        jLabel6.setText("Bateria Selada Gel Moura 7ah 12v - R$ 75.00");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setText("Sensor paradox pro plus");
+        jLabel7.setText("Sensor paradox pro plus - R$ 345.00");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setText("Sirene Ecp Monotonal 12v");
+        jLabel8.setText("Sirene Ecp Monotonal 12v - R$ 18.00");
 
         btnAddCentralDSC.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         btnAddCentralDSC.setText("+");
@@ -130,10 +139,10 @@ public class NovaCompra extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel10.setText("Sensor Infravermelho Passivo Intelbras");
+        jLabel10.setText("Sensor Infravermelho Passivo Intelbras - R$ 150.00");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel11.setText("Sirene Alarme Glk Compacta 12v");
+        jLabel11.setText("Sirene Alarme Glk Compacta 12v - R$ 16.00");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel12.setText("Produtos:");
@@ -298,6 +307,7 @@ public class NovaCompra extends javax.swing.JFrame {
             }
         });
 
+        txtClienteLogado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtClienteLogado.setText("jLabel13");
 
         txtTotal.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
@@ -307,103 +317,106 @@ public class NovaCompra extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAddCentralJFL)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnRetiraCentralJFL, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnAddTecladoDSC)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnRetiraTecladoDSC, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnAddCentralParadox)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnRetiraTecladoParadox, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnAddBateriaIntel)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnRetiraBateriaIntel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel2)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnAddBateriaMoura)
+                                        .addComponent(btnAddCentralJFL)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnRetiraBateriaMoura, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnRetiraCentralJFL, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel10)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(btnAddSensorIntelbras)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnRetiraSensorJFL, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel3)
                                             .addGap(18, 18, 18)
-                                            .addComponent(btnAddSensorParadox)
+                                            .addComponent(btnAddTecladoDSC)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnRetiraSensorParadox, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(btnRetiraTecladoDSC, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4)
                                             .addGap(18, 18, 18)
-                                            .addComponent(btnAddSireneGlk)
+                                            .addComponent(btnAddCentralParadox)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnRetiraSireneGlk, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(btnRetiraTecladoParadox, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel5)
                                             .addGap(18, 18, 18)
-                                            .addComponent(btnAddSireneEcp)
+                                            .addComponent(btnAddBateriaIntel)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnRetiraSireneEcp, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAddCentralDSC)
+                                            .addComponent(btnRetiraBateriaIntel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnAddBateriaMoura)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnRetiraBateriaMoura, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel10)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(btnAddSensorIntelbras)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(btnRetiraSensorJFL, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel7)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(btnAddSensorParadox)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(btnRetiraSensorParadox, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(btnAddSireneGlk)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(btnRetiraSireneGlk, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel8)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(btnAddSireneEcp)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(btnRetiraSireneEcp, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnAddCentralDSC)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnRetiraCentralDSC, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnRetiraCentralDSC, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtTotalDSC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtJFL, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtBateIntel, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtTeclaParadox, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtTeclaDSC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(txtSensorParadox, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBateriaMoura, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSensorPassivo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSireneGLK, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSireneECP, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtTotalDSC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtJFL, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtBateIntel, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(txtTeclaParadox, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtTeclaDSC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtSensorParadox, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBateriaMoura, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSensorPassivo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSireneGLK, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSireneECP, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(197, 197, 197)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton19)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(81, 81, 81)
+                                        .addComponent(jButton1))))))
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(txtClienteLogado)
-                        .addGap(209, 209, 209)
-                        .addComponent(jLabel12))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(81, 81, 81)
-                                .addComponent(jButton1)))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                        .addGap(113, 113, 113)
+                        .addComponent(jLabel12)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,8 +426,8 @@ public class NovaCompra extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(txtClienteLogado)))
+                        .addGap(22, 22, 22)
+                        .addComponent(txtClienteLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -558,7 +571,7 @@ public class NovaCompra extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(rootPane, "Compra Finalizada, verificar pedido no menu de 'Minhas Compras!'");
         this.setVisible(false);
-        new MenuInicial(clienteLogado).setVisible(true);
+        new MenuInicial(clienteLogado).setVisible(true); 
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void btnRetiraCentralDSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiraCentralDSCActionPerformed
@@ -623,8 +636,8 @@ public class NovaCompra extends javax.swing.JFrame {
 
     private void btnRetiraTecladoParadoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiraTecladoParadoxActionPerformed
         if (c.getTecladoParadox() > 0) {
-            c.setTecladoParadox(c.getTecladoParadox() - 635.99);
-            c.setPrecoTotalCompra(c.getPrecoTotalCompra() - 635.99);
+            c.setTecladoParadox(c.getTecladoParadox() - 635.00);
+            c.setPrecoTotalCompra(c.getPrecoTotalCompra() - 635.00);
             txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
 
             c.setContadorTecladoParadox(c.getContadorTecladoParadox() - 1);
@@ -636,8 +649,8 @@ public class NovaCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRetiraTecladoParadoxActionPerformed
 
     private void btnAddCentralParadoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCentralParadoxActionPerformed
-        c.setTecladoParadox(c.getTecladoParadox() + 635.99);
-        c.setPrecoTotalCompra(c.getPrecoTotalCompra() + 635.99);
+        c.setTecladoParadox(c.getTecladoParadox() + 635.00);
+        c.setPrecoTotalCompra(c.getPrecoTotalCompra() + 635.00);
         txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
 
         c.setContadorTecladoParadox(c.getContadorTecladoParadox() + 1);
@@ -670,8 +683,8 @@ public class NovaCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddBateriaIntelActionPerformed
 
     private void btnAddBateriaMouraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBateriaMouraActionPerformed
-        c.setBateriaMoura(c.getBateriaMoura() + 75.40);
-        c.setPrecoTotalCompra(c.getPrecoTotalCompra() + 75.40);
+        c.setBateriaMoura(c.getBateriaMoura() + 75.00);
+        c.setPrecoTotalCompra(c.getPrecoTotalCompra() + 75.00);
         txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
 
         c.setContadorBateriaMoura(c.getContadorBateriaMoura() + 1);
@@ -681,8 +694,8 @@ public class NovaCompra extends javax.swing.JFrame {
 
     private void btnRetiraBateriaMouraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiraBateriaMouraActionPerformed
         if (c.getBateriaMoura() > 0) {
-            c.setBateriaMoura(c.getBateriaMoura() - 75.40);
-            c.setPrecoTotalCompra(c.getPrecoTotalCompra() - 75.40);
+            c.setBateriaMoura(c.getBateriaMoura() - 75.00);
+            c.setPrecoTotalCompra(c.getPrecoTotalCompra() - 75.00);
             txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
 
             c.setContadorBateriaMoura(c.getContadorBateriaMoura() - 1);
@@ -718,8 +731,8 @@ public class NovaCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRetiraSensorParadoxActionPerformed
 
     private void btnAddSensorIntelbrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSensorIntelbrasActionPerformed
-        c.setSensorPassivo(c.getSensorPassivo() + 22.00);
-        c.setPrecoTotalCompra(c.getPrecoTotalCompra() + 22.00);
+        c.setSensorPassivo(c.getSensorPassivo() + 150.00);
+        c.setPrecoTotalCompra(c.getPrecoTotalCompra() + 150.00);
         txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
 
         c.setContadorSensorIntel(c.getContadorSensorIntel() + 1);
@@ -729,8 +742,8 @@ public class NovaCompra extends javax.swing.JFrame {
 
     private void btnRetiraSensorJFLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiraSensorJFLActionPerformed
         if (c.getSensorPassivo() > 0) {
-            c.setSensorPassivo(c.getSensorPassivo() - 22.00);
-            c.setPrecoTotalCompra(c.getPrecoTotalCompra() - 22.00);
+            c.setSensorPassivo(c.getSensorPassivo() - 150.00);
+            c.setPrecoTotalCompra(c.getPrecoTotalCompra() - 150.00);
             txtTotal.setText(String.valueOf("Valor total: R$ " + c.getPrecoTotalCompra()));
 
             c.setContadorSensorIntel(c.getContadorSensorIntel() - 1);
@@ -819,6 +832,22 @@ public class NovaCompra extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NovaCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

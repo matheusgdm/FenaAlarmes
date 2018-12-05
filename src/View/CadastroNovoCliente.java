@@ -306,6 +306,7 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Não foi possivel salvar novo cadastro!");
             }
 
+            JOptionPane.showMessageDialog(rootPane, "Cadastro realizado com sucesso!!");
             this.setVisible(false); 
             new TelaInicial().setVisible(true);
         }

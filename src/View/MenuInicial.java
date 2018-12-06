@@ -48,8 +48,8 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnMinhasComprasMenuInicial.setFont(new java.awt.Font("Sitka Banner", 1, 30)); // NOI18N
-        btnMinhasComprasMenuInicial.setText("Minhas Compras");
+        btnMinhasComprasMenuInicial.setFont(new java.awt.Font("Sitka Banner", 1, 28)); // NOI18N
+        btnMinhasComprasMenuInicial.setText("Todas as compras");
         btnMinhasComprasMenuInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMinhasComprasMenuInicialActionPerformed(evt);

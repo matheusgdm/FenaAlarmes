@@ -105,7 +105,7 @@ public class MinhasCompras extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1170, 880));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Symbol", 1, 36)); // NOI18N
-        jLabel1.setText("Minhas Compras:");
+        jLabel1.setText("Todas as compras:");
 
         jButton1.setFont(new java.awt.Font("Sitka Text", 1, 20)); // NOI18N
         jButton1.setText("Retorna ao menu");
@@ -365,7 +365,7 @@ public class MinhasCompras extends javax.swing.JFrame {
                         .addGap(423, 423, 423)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(504, 504, 504)
+                        .addGap(501, 501, 501)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );

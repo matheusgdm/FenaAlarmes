@@ -379,7 +379,7 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="504" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="501" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" pref="130" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -452,7 +452,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI Symbol" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Minhas Compras:"/>
+        <Property name="text" type="java.lang.String" value="Todas as compras:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">

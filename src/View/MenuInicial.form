@@ -105,9 +105,9 @@
         <Component class="javax.swing.JButton" name="btnMinhasComprasMenuInicial">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Sitka Banner" size="30" style="1"/>
+              <Font name="Sitka Banner" size="28" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Minhas Compras"/>
+            <Property name="text" type="java.lang.String" value="Todas as compras"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMinhasComprasMenuInicialActionPerformed"/>

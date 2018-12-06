@@ -283,13 +283,20 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
             c.setNome(painelNomeTelaCadastro.getText());
             c.setSobrenome(painelSobrenomeTelaCadastro.getText());
             c.setEmail(painelEmailTelaCadastro.getText());
+            try {
             c.setTelefone1(Integer.parseInt(painelTelefone01TelaCadastro.getText()));
-            c.setTelefone2(Integer.parseInt(painelTelefone02TelaCadastro.getText()));
+            } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Telefone 01 não é válido!");
+            }
+            try {
+            c.setTelefone2(Integer.parseInt(painelTelefone02TelaCadastro.getText()));    
+            } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Telefone 02 não é válido!");
+            }
             c.setSenha(painelSenhaTelaCadastro.getText());
             String nasc = painelNascionalidadeTelaCadastro.getText() != null || !painelNascionalidadeTelaCadastro.getText().isEmpty()  ? painelNascionalidadeTelaCadastro.getText(): "Brasil";
             c.setNascionalidade(nasc);
             ClienteRep eRep = new ClienteRep();
-            
             
             try {
                 eRep.salvar(c);
